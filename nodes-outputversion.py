@@ -6,7 +6,11 @@ boardsize = 3
 
 from math import ceil
 
+c=0
+
 def score(position):
+    global c
+    c= c+1
     if "N"*ceil(boardsize/2) in position:
         return 1
     elif "P"*ceil(boardsize/2) in position:
@@ -47,6 +51,7 @@ elif outcome == -1:
     print("Win for previous player in position {}".format(move))
 else:
     print("Draw")
+print("searched {} positions".format(c))
 
 latexoutput1 = """
 \\documentclass{standalone}
